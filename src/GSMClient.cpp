@@ -232,6 +232,10 @@ int GSMClient::connect()
     stop();
   }
 
+  if (_socket == -1 && _state != CLIENT_STATE_IDLE) {
+    _state = CLIENT_STATE_IDLE;
+  }
+
   if (_synch) {
     while (ready() == 0);
   } else if (ready() == 0) {

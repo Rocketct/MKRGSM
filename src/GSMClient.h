@@ -96,6 +96,11 @@ public:
    */
   uint8_t connected();
 
+  /** Check socket status
+      @return 1 if opened
+   */
+  uint8_t socketStatusCheck();
+
   operator bool();
 
   /** Read from response buffer and copy size specified to buffer
